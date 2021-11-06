@@ -15,8 +15,7 @@ public class SelectionSort extends Algorithm {
 	public ArrayList<Double> sort() {
 
 		/* Copy cached list */
-		ArrayList<Double> list = new ArrayList<>();
-		list.addAll(getListToSort());
+		ArrayList<Double> list = getListToSort();
 
 		int i = 0, length = list.size();
 
@@ -31,6 +30,8 @@ public class SelectionSort extends Algorithm {
 				if (x < first) {
 					first = x;
 				}
+
+				addComparison();
 			}
 
 			/* Remove found number from list */

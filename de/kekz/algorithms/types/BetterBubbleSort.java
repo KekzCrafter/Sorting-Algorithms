@@ -15,8 +15,7 @@ public class BetterBubbleSort extends Algorithm {
 	public ArrayList<Double> sort() {
 
 		/* Copy cached list */
-		ArrayList<Double> list = new ArrayList<>();
-		list.addAll(getListToSort());
+		ArrayList<Double> list = getListToSort();
 
 		int length = list.size();
 
@@ -36,6 +35,8 @@ public class BetterBubbleSort extends Algorithm {
 					list.set(j, compare);
 					list.set(j + 1, first);
 				}
+
+				addComparison();
 			}
 
 			length--;

@@ -6,8 +6,10 @@ import de.kekz.algorithms.enums.AlgorithmType;
 
 public class Algorithm {
 
-	private AlgorithmType algorithmType;
 	private ArrayList<Double> listToSort;
+	private AlgorithmType algorithmType;
+
+	private int comparisons;
 	private long start, end;
 
 	public Algorithm(AlgorithmType algorithmType) {
@@ -17,7 +19,6 @@ public class Algorithm {
 	/* Adds the unsorted list to the algorithm */
 	public Algorithm buildWithList(ArrayList<Double> list) {
 		this.listToSort = list;
-
 		return this;
 	}
 
@@ -32,12 +33,21 @@ public class Algorithm {
 		return sort();
 	}
 
+	@SuppressWarnings("unchecked")
+	public ArrayList<Double> getListToSort() {
+		return (ArrayList<Double>) listToSort.clone();
+	}
+
 	public AlgorithmType getAlgorithmType() {
 		return algorithmType;
 	}
 
-	public ArrayList<Double> getListToSort() {
-		return listToSort;
+	public int getComparisons() {
+		return comparisons;
+	}
+
+	public void addComparison() {
+		this.comparisons++;
 	}
 
 	public void setStart() {

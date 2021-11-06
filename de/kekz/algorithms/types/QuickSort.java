@@ -15,8 +15,7 @@ public class QuickSort extends Algorithm {
 	public ArrayList<Double> sort() {
 
 		/* Copy cached list */
-		ArrayList<Double> list = new ArrayList<>();
-		list.addAll(getListToSort());
+		ArrayList<Double> list = getListToSort();
 
 		/* Only sort if list is not empty */
 		if (!list.isEmpty()) {
@@ -37,6 +36,8 @@ public class QuickSort extends Algorithm {
 				} else {
 					higher.add(x);
 				}
+
+				addComparison();
 			}
 
 			/* Sort lower & higher */
