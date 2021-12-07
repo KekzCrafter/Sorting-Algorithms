@@ -23,22 +23,23 @@ public class SelectionSort extends Algorithm {
 		/* Repeat as long the complete list wasn't checked */
 		while (i < length) {
 
-			/* Get element */
-			double first = list.get(i);
+			int minIndex = i, j = i;
 
-			/* Is there any x lower than first? */
-			for (double x : list.subList(i, length)) {
-				if (x < first) {
-					first = x;
+			/* Find index of lowest number */
+			while (j < length) {
+				double first = list.get(minIndex), compare = list.get(j);
+
+				if (compare < first) {
+					minIndex = j;
 				}
+
+				j++;
 			}
 
-			/* Remove found number from list */
-			list.remove(first); // not working good, only removes the first found element, thas why I added
-								// decimals to randomize items
-
-			/* Sort found number to the front */
-			list.add(i, first);
+			/* Switch lowest with compared number */
+			double temp = list.get(i);
+			list.set(i, list.get(minIndex));
+			list.set(minIndex, temp);
 
 			i++;
 		}
