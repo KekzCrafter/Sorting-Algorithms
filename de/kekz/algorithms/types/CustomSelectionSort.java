@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import de.kekz.algorithms.Algorithm;
 import de.kekz.algorithms.enums.AlgorithmType;
 
-public class SelectionSort extends Algorithm {
+public class CustomSelectionSort extends Algorithm {
 
-	public SelectionSort() {
-		super(AlgorithmType.SELECTION);
+	public CustomSelectionSort() {
+		super(AlgorithmType.CUSTOMSELECTION);
 	}
 
 	@Override
@@ -18,16 +18,16 @@ public class SelectionSort extends Algorithm {
 		ArrayList<Double> list = new ArrayList<>();
 		list.addAll(getListToSort());
 
-		int i = 0, length = list.size();
+		int length = list.size();
 
 		/* Repeat as long the complete list wasn't checked */
-		while (i < length) {
+		while (length > 0) {
 
-			/* Get element */
-			double first = list.get(i);
+			/* Get first element */
+			double first = list.get(0);
 
 			/* Is there any x lower than first? */
-			for (double x : list.subList(i, length)) {
+			for (double x : list.subList(0, length)) {
 				if (x < first) {
 					first = x;
 				}
@@ -37,10 +37,10 @@ public class SelectionSort extends Algorithm {
 			list.remove(first); // not working good, only removes the first found element, thas why I added
 								// decimals to randomize items
 
-			/* Sort found number to the front */
-			list.add(i, first);
+			/* Sort found number to the end */
+			list.add(first);
 
-			i++;
+			length--;
 		}
 
 		return list;

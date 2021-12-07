@@ -16,7 +16,8 @@ public class Default extends Algorithm {
 	public ArrayList<Double> sort() {
 
 		/* Copy cached list */
-		ArrayList<Double> list = getListToSort();
+		ArrayList<Double> list = new ArrayList<>();
+		list.addAll(getListToSort());
 
 		/* Sort */
 		Collections.sort(list);
