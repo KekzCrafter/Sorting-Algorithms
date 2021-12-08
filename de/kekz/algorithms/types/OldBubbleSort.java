@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import de.kekz.algorithms.Algorithm;
 import de.kekz.algorithms.enums.AlgorithmType;
 
-public class BubbleSort extends Algorithm {
+public class OldBubbleSort extends Algorithm {
 
-	public BubbleSort() {
-		super(AlgorithmType.BUBBLE);
+	public OldBubbleSort() {
+		super(AlgorithmType.OLDBUBBLE);
 	}
 
 	@Override
@@ -17,14 +17,10 @@ public class BubbleSort extends Algorithm {
 		/* Copy cached list */
 		ArrayList<Double> list = getListToSort();
 
-		int length = list.size();
+		int i = 0, length = list.size();
 
 		/* Repeat as long the complete list wasn't checked */
-		while (length > 0) {
-
-			// When sorting with Bubblesort, every round the next highest number will be
-			// sorted on the right of the list, which means that we can skip those in the
-			// next rounds and save some time. That's the difference to the old Algorithm
+		while (i < length) {
 
 			/* Compare all items */
 			for (int j = 0; j < length - 1; j++) {
@@ -39,7 +35,7 @@ public class BubbleSort extends Algorithm {
 				addComparison();
 			}
 
-			length--;
+			i++;
 		}
 
 		return list;

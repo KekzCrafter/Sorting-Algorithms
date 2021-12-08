@@ -31,6 +31,8 @@ public class CustomSelectionSort extends Algorithm {
 				if (x < first) {
 					first = x;
 				}
+
+				addComparison();
 			}
 
 			/* Remove found number from list */

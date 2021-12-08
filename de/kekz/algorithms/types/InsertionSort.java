@@ -15,8 +15,7 @@ public class InsertionSort extends Algorithm {
 	public ArrayList<Double> sort() {
 
 		/* Copy cached list */
-		ArrayList<Double> list = new ArrayList<Double>();
-		list.addAll(getListToSort());
+		ArrayList<Double> list = getListToSort();
 
 		int length = list.size();
 
@@ -28,10 +27,12 @@ public class InsertionSort extends Algorithm {
 			/* Get key element (to compare) */
 			double first = list.get(i);
 
-			/* Compare key element to the numbers (left side) */
+			/* Compare key element to the numbers left */
 			while (j >= 0 && list.get(j) > first) {
 				list.set(j + 1, list.get(j));
 				j--;
+
+				addComparison();
 			}
 
 			list.set(j + 1, first);

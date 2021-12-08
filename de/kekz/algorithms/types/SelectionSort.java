@@ -34,6 +34,8 @@ public class SelectionSort extends Algorithm {
 				}
 
 				j++;
+
+				addComparison();
 			}
 
 			/* Switch lowest with compared number */
