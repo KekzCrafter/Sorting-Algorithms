@@ -23,7 +23,7 @@ public class SelectionSort extends Algorithm {
 		/* Repeat as long the complete list wasn't checked */
 		while (i < length - 1) {
 
-			int minIndex = i, j = i;
+			int minIndex = i, j = i + 1;
 
 			/* Find index of lowest number */
 			while (j < length) {
