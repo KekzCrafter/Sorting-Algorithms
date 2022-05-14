@@ -3,4 +3,4 @@ Here you will find the following sorting algorithms:
 - Selectionsort (real & custom one)
 - Bubblesort (old & new version)
 - Insertsort
-- Quicksort (multiple & single list version)
+- Quicksort (multiple lists version)
